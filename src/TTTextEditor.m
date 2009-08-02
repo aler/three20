@@ -194,7 +194,7 @@ static CGFloat kTextViewInset = 31;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)updatePlaceholder {
-  if (_placeholder && !_editing && !_textView.text.length) {
+  if (_placeholder && !_textView.text.length) {
     if (!_placeholderLabel) {
       _placeholderLabel = [[UILabel alloc] init];
       _placeholderLabel.backgroundColor = [UIColor clearColor];
@@ -211,7 +211,8 @@ static CGFloat kTextViewInset = 31;
     _placeholderLabel.text = _placeholder;
     [self bringSubviewToFront:_placeholderLabel];
     _placeholderLabel.hidden = NO;
-  } else {
+  }
+  else {
     _placeholderLabel.hidden = YES;
   }
 }
@@ -284,6 +285,7 @@ static CGFloat kTextViewInset = 31;
   if (_autoresizesToText) {
     [self constrainToText];
   }
+  [self updatePlaceholder];
 }
 
 - (void)didBeginEditing {
